@@ -1,0 +1,287 @@
+.booking_main {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px); /* 减去导航栏高度 */
+    overflow: hidden;
+  }
+  
+  .booking_settings {
+    font-size: 24px;
+    font-weight: bold;
+    width: 35%;
+    min-width: 400px;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .booking_map {
+    width: 65%;
+    height: 100%;
+  }
+  
+  .booking_heading{
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6200ea;
+    color: #6200ea;
+  }
+  .map_container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .booking_form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  .name, .email, .startlocation, .endlocation, .drivinglicense {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  #name, #email, #start, #end, #driving {
+    font-size: 16px;
+    width: 120px;
+    font-weight: 600;
+  }
+  #name_field, #email_field, #start_field, #end_field, #driving_field {
+    flex: 1;
+    display: flex;
+  }
+  #name_field input, #email_field input, #start_field input, #end_field input, #driving_field input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .book_btn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  #book_btns{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  #book_btns:hover {
+    background-color: #3700b3;
+  }
+  /* 清除按钮样式 */
+  .clear-btn {
+    padding: 8px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    font-size: 14px;
+  }
+  /* 位置选择模式提示样式 */
+  .selection-mode {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  @media (max-width: 1024px) {
+    .booking_main {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .booking_settings,
+    .booking_map {
+      width: 100%;
+      min-width: 100%;
+    }
+    
+    .booking_map {
+      height: 500px;
+    }
+    
+    .map_container {
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .name, .email, .startlocation, .endlocation, .drivinglicense {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    #name, #email, #start, #end, #driving {
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    
+    #name_field, #email_field, #start_field, #end_field, #driving_field {
+      width: 100%;
+    }
+    
+    .booking_map {
+      height: 400px;
+    }
+  }
+  .booking-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .booking-dialog {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dialog-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dialog-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s;
+  }
+  
+  .close-btn:hover {
+    color: #111;
+  }
+  
+  .dialog-content {
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  .loading-spinner {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #6200ea;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .dialog-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    text-align: right;
+  }
+  
+  .primary-btn {
+    padding: 8px 16px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .primary-btn:hover {
+    background-color: #3700b3;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .status-badge.success {
+    background-color: #4CAF50;
+  }
+  
+  .status-badge.failed {
+    background-color: #F44336;
+  }
+  
+  .booking-details {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+  }
+  
+  .booking-details p {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  
+  .segment-info {
+    margin-top: 15px;
+  }
+  
+  .segment-note {
+    font-style: italic;
+    color: #4CAF50;
+  }
+  
+  @media (max-width: 600px) {
+    .booking-dialog {
+      width: 95%;
+    }
+  }

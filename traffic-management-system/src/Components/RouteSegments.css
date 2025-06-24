@@ -1,0 +1,152 @@
+.segment-info {
+  min-width: 200px;
+  padding: 5px;
+  text-align: center;
+}
+
+.segment-info h3 {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.segment-info .status {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.segment-info .status-available {
+  background-color: #4CAF50;
+}
+
+.segment-info .status-limited {
+  background-color: #FFC107; 
+  color: #333;
+}
+
+.segment-info .status-full {
+  background-color: #F44336; 
+}
+
+.segment-info .alternative-message {
+  color: #F44336;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.segment-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid white;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.gateway-node {
+  position: relative;
+}
+
+.gateway-node::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  left: -10px;
+  border: 2px solid #3F51B5;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+.alternative-route-info {
+  border-left: 4px solid #FFC107;
+  padding-left: 8px;
+  margin-top: 8px;
+}
+
+.alternative-route-title {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.route-legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  z-index: 2;
+  border: 1px solid #ccc;
+  min-width: 160px;
+}
+
+.legend-header {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  color: #333;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.legend-title {
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+}
+
+.route-details {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.route-details p {
+  margin: 4px 0;
+  font-size: 12px;
+}
+
+.route-details strong {
+  color: #555;
+} 
